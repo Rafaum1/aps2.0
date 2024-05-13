@@ -1,0 +1,485 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Inter", sans-serif, serif;
+}
+
+:root{
+    font-size: 10px;
+
+    --clr-blue: #007285;
+    --clr-bege: #FFE3B4;
+    --clr-green: #17A07A;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#seta{
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+}
+
+#seta svg{
+    width: 5rem;
+    height: 5rem;
+
+    opacity: .8;
+    color: #00d9ff;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+#seta svg:hover{
+    transform: scale(1.05);
+}
+
+/* SCROLLBAR */
+/* Personalização da barra de rolagem vertical */
+::-webkit-scrollbar {
+    width: 1.2rem;
+    border-radius: 1rem;
+    background-color: #ffffff62;
+}
+
+::-webkit-scrollbar-thumb:vertical{
+    background-image: linear-gradient(to top, #00d9ff, #00ffb7);
+    border-radius: 1rem;
+}
+
+/* Personaliza da barra de rolagem horizontal */
+::-webkit-scrollbar-horizontal{
+    height: 1.2rem;
+    border-radius: 1rem;
+    background-color: #ffffff62;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #ffffffbb;
+    border-radius: 1rem;
+}
+
+
+/* CLASSES GERAIS */
+.header-logo{
+    width: 7rem;
+    height: 7rem;
+
+    background-color: var(--clr-blue);
+}
+
+.nav-icon{
+    width: 1.3rem;
+    height: 1.3rem;
+
+    align-items: center;
+
+    transition: .2s;
+}
+
+.logo-unip{
+    width: 30rem;
+    height: 8rem;
+}
+
+.dropdown{
+    padding: .2rem;
+}
+
+.dropdown-menu{
+    position: absolute;
+    box-shadow: 0 0 2px black;
+
+    display: none;
+}
+
+.dropdown-menu a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-family: "Inter", sans-serif, serif;
+
+    padding: .5rem;
+}
+
+header .dropdown .dropdown-menu a{
+    color: #fff;
+    font-weight: 500;
+}
+
+.dropdown #dropdown-item{
+    cursor: default;
+}
+
+.dropdown-menu a:hover{
+    background-color: var(--clr-green);
+    color: white;
+}
+
+.dropdown-menu a:hover .nav-icon{
+    background-color: var(--clr-green);
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+/* MAIN */
+
+/* NAV */
+nav{
+    width: 100%;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 2rem;
+}
+
+nav, nav ul, nav ul li, nav ul li a, nav ul li img{
+    background-color: #fff;
+}
+
+nav ul{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav ul li a{
+    font-size: 1.7rem;
+
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+
+    color: #000;
+    transition: .2s;
+}
+
+nav ul li a:hover{
+    color: var(--clr-green);
+    
+    align-items: center;
+}
+
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 2rem 5rem;
+    width: 100%;
+    height: 10rem;
+
+    color: white;
+}
+
+header, header ul, header ul li, header ul li img{
+    background-color: var(--clr-blue);
+    align-items: center;
+}
+
+header ul{
+    display: flex;
+    gap: 5rem;
+
+    list-style: none;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: cursive, sans-serif, serif;
+}
+
+header ul li a{
+    cursor: pointer;
+
+    font-size: 2.2rem;
+    
+    text-decoration: none;
+    background-color: var(--clr-blue);
+    color: #fff;
+
+    transition: .1s;
+}
+
+header ul li a:hover{
+    color: rgba(255, 255, 255, 0.432);
+}
+
+header ul .dropdown-menu a{
+    cursor: default;
+}
+
+/* SECTION */
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+
+    background-color: var(--clr-bege);
+}
+
+section h1{
+    font-size: 8rem;
+    text-align: center;
+    line-height: 9.1rem;
+    font-weight: 100;
+    font-family: "Titan One", sans-serif, serif;
+
+    color: var(--clr-green);
+
+    margin-bottom: 2rem;
+}
+
+section p{
+    font-size: 2.8rem;
+    text-align: center;
+
+    color: var(--clr-blue);
+    font-family: "Mulish", sans-serif, serif;
+    font-weight: 600;
+}
+
+.car-img{
+    width: 66.7rem;
+    height: 66.7rem;
+}
+
+/* ASIDE */
+
+aside{
+    background-color: var(--clr-blue);
+    box-shadow: 0 0 1rem rgb(0, 114, 133, 0.603);
+    height: 100rem;
+}
+
+aside h1{
+    padding: 5rem;
+    font-size: 4rem;
+    text-align: center;
+    font-family: "Titan One", sans-serif, serif;
+    font-weight: 100;
+    color: var(--clr-bege);
+    letter-spacing: .2rem;
+}
+
+.scroll-horizontal {
+    display: flex;
+    margin: 0 auto;
+    width: 85%;
+    overflow-x: scroll;
+}
+
+.scroll-horizontal .cards {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-bege);
+    min-width: 45rem;
+    max-width: 45rem;
+    min-height: 60rem;
+    max-height: 60rem;
+    border-radius: 5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 5rem;
+    position: relative;
+}
+
+.scroll-horizontal .cards img {
+    display: block;
+}
+
+.btn-card {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #c90000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    text-transform: uppercase;
+    font-family:  "Inter", sans-serif, serif;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    font-size: 2rem;
+    
+    justify-content: center;
+    align-items: center;
+    
+    padding: 2rem 17.87rem 2rem;
+    border-radius: 0 0 2rem 2rem;
+
+    transition: .2s;
+}
+
+.btn-card:hover{
+    background-color: #9e0000;
+}
+
+/* #FORMULARIO */
+#formulario{
+    background-color: var(--clr-bege);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 60rem;
+    padding-top: 5rem;
+}
+
+#formulario form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 50rem;
+}
+
+#formulario h1{
+    color: #ffffff;
+    font-size: 5rem;
+    font-family: "Inter", sans-serif, serif;
+    font-weight: bold;
+}
+
+#formulario h1 span{
+    color: var(--clr-blue);
+}
+
+#formulario input{
+    height: 5rem;
+    width: 50rem;
+
+    border-radius: 5rem;
+    border: none;
+    outline: none;
+
+    margin-bottom: 2rem;
+}
+
+#formulario input::placeholder, #formulario textarea::placeholder{
+    color: var(--clr-blue);
+}
+
+#formulario .placeholder{
+    padding-left: 3rem;
+    font-size: 1.6rem;
+}
+
+#formulario textarea{
+    height: 10rem;
+    width: 50rem;
+
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    padding: 3rem 3rem 0;
+}
+
+#formulario form #btn-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formulario form #btn-input #btn-enviar{
+    width: 15rem;
+    height: 5rem;
+
+    padding: 0;
+    background-color: var(--clr-blue);
+    color: #fff;
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+#formulario form #btn-input #btn-enviar:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 .8rem rgba(0, 114, 133, 0.603);
+}
+
+
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background-color: var(--clr-blue);
+    height: 30rem;
+}
+
+footer #logo img{
+    height: 12rem;
+    width: 12rem;
+
+    margin-bottom: 2rem;
+}
+
+footer #logo #redes{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer #logo #redes .ball-icons{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: .2s;
+}
+
+footer #logo #redes .ball-icons:hover{
+    color: rgba(255, 255, 255, 0.521);
+}
+
+footer #contato ul h2{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+footer #contato ul li, footer #contato ul li a{
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: white;
+
+    transition: .2s;
+}
+
+footer #contato ul li{
+    margin-bottom: .5rem;
+}
+
+footer #contato ul li a:hover{
+    color: rgba(255, 255, 255, 0.521);
+}
+
+footer #localização h2{
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+footer #localização p{
+    font-size: 1.8rem;
+    color: #fff;
+}
